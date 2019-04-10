@@ -13,8 +13,9 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        transform.position += Input.GetAxis("Strafe") * transform.right * MoveSpeed;
-        transform.position += Input.GetAxis("Thrust") * transform.forward * MoveSpeed;
+        var direction = Quaternion.Euler(0, PlayerCamera.transform.rotation.eulerAngles.y, 0);
+        transform.position += Input.GetAxis("Strafe") * (direction * Vector3.right) * MoveSpeed;
+        transform.position += Input.GetAxis("Thrust") * (direction * Vector3.forward) * MoveSpeed;
 
         transform.Rotate(transform.up, Input.GetAxis("Camera Horizontal") * LookSpeed);
         // only rotate the camera itself up/down -- automatically doesn't work if VR is up

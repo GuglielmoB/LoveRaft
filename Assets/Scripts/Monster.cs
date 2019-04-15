@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
     public List<GameObject> path;
     public GameObject currentTarget;
     public GameObject lastTarget;
+    public GameObject player;
 
     //monster movement vals
     CharacterController characterController;
@@ -68,9 +69,22 @@ public class Monster : MonoBehaviour
         acceleration += force / mass;
     }
 
+    protected bool DetectPlayer()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, player.transform.position-transform.position, out hit) && hit.collider.gameObject == player)
+        {
+            return true;
+        }
+        
+
+        return false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        aggro = DetectPlayer();
         position = transform.position;
         CalcSteering();
 

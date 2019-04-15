@@ -979,8 +979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abfdf6fd8415984a968113a59de5bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Here: {fileID: 398331736}
-  There: {fileID: 398331735}
+  Entrance: {fileID: 398331736}
+  EnterDirection: 2
+  Exit: {fileID: 398331735}
+  ExitDirection: 3
   Rotation: {x: 0, y: 180, z: 0}
   Bidirectional: 1
 --- !u!4 &398331738

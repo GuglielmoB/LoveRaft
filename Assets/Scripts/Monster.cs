@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
     public List<GameObject> path;
     public GameObject currentTarget;
     public GameObject lastTarget;
+    public int currIndex;
     public GameObject player;
 
     //monster movement vals
@@ -84,6 +85,15 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Vector3.Distance(transform.position, currentTarget.transform.position) < .01f)
+        {
+            currIndex++;
+            if(currIndex > path.Count)
+            {
+                currIndex = 0;
+            }
+            currentTarget = path[currIndex];
+        }
         aggro = DetectPlayer();
         position = transform.position;
         CalcSteering();

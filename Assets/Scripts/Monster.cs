@@ -74,6 +74,7 @@ public class Monster : MonoBehaviour
 
     public void ApplyForce(Vector3 force)
     {
+        force.y = 0;
         acceleration += force / mass;
     }
 
@@ -92,7 +93,7 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, currentTarget.transform.position) < .1f && !aggro)
+        if(Vector3.Distance(transform.position, currentTarget.transform.position) < .09f && !aggro)
         {
             currIndex++;
             if(currIndex > path.Count-1)

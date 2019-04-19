@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1100,9 +1100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Entrance: {fileID: 398331736}
-  EnterDirection: 2
+  EnterDirection: 1
   Exit: {fileID: 398331735}
-  ExitDirection: 3
+  ExitDirection: 1
   Rotation: {x: 0, y: 180, z: 0}
   Bidirectional: 1
 --- !u!4 &398331738
@@ -2283,6 +2283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 50
   LookSpeed: 3
+  VerticalLookLimit: 89
   ForceEnableVerticalLook: 1
   PlayerCamera: {fileID: 111852667}
 --- !u!4 &894005863
@@ -3546,7 +3547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486591728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14897919, y: 1.68, z: 6.099802}
+  m_LocalPosition: {x: -0.14897919, y: 2.45, z: 6.099802}
   m_LocalScale: {x: 2.6412, y: 1.470217, z: 1}
   m_Children: []
   m_Father: {fileID: 1677465959}
@@ -5301,17 +5302,17 @@ PrefabInstance:
     - target: {fileID: 8512806026449717742, guid: f497bd9ef69df6d419549f2077d15c59,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.83
+      value: -37.61
       objectReference: {fileID: 0}
     - target: {fileID: 8512806026449717742, guid: f497bd9ef69df6d419549f2077d15c59,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77
+      value: 1.201
       objectReference: {fileID: 0}
     - target: {fileID: 8512806026449717742, guid: f497bd9ef69df6d419549f2077d15c59,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.545
+      value: -12.45
       objectReference: {fileID: 0}
     - target: {fileID: 8512806026449717742, guid: f497bd9ef69df6d419549f2077d15c59,
         type: 3}
@@ -5393,10 +5394,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 894005861}
+    - target: {fileID: 8512806026449717650, guid: f497bd9ef69df6d419549f2077d15c59,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8512806026449717651, guid: f497bd9ef69df6d419549f2077d15c59,
         type: 3}
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8512806026449717650, guid: f497bd9ef69df6d419549f2077d15c59, type: 3}
+    - {fileID: 8512806026449717737, guid: f497bd9ef69df6d419549f2077d15c59, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f497bd9ef69df6d419549f2077d15c59, type: 3}

@@ -18,7 +18,7 @@ public class Gate : MonoBehaviour
     public Vector3 Rotation;
     public bool Bidirectional;
 
-    bool justTeleported;
+    public bool justTeleported;
     Quaternion qRotation;
     Quaternion qiRotation;
 

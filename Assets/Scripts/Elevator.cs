@@ -7,36 +7,32 @@ public class Elevator : MonoBehaviour {
     //need to update for this game
     float xOffset = .1f;
     Vector3 tempPos;
-    public GameObject platform;
     Vector3 endPos;
     bool active = false;
     public float speed = 1;
+    public BoxCollider trigger;
 
     // Use this for initialization
     void Start () {
 
         tempPos = this.transform.position;
-        endPos = platform.transform.position;
-        endPos.y += 4;
+        endPos = tempPos;
+        endPos.y += 3;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(active && platform.transform.position.y <= endPos.y)
+		if(active && transform.position.y <= endPos.y)
         {
-            Vector3 temp = platform.transform.position;
+            Vector3 temp = transform.position;
             temp.y += speed * Time.deltaTime;
-            platform.transform.position = temp;
+            transform.position = temp;
         }
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Shot")
-        {
-            tempPos.x += xOffset;
-            this.transform.position = tempPos;
-            active = true;
-        }
+        active = true;
+
     }
 }

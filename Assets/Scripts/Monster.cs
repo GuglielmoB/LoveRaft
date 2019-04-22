@@ -102,13 +102,14 @@ public class Monster : MonoBehaviour
             }
             currentTarget = path[currIndex];
         }
-        aggro = DetectPlayer();
+        //aggro = DetectPlayer();
         position = transform.position;
         CalcSteering();
 
         velocity += acceleration;
         velocity = VectorHelper.Clamp(velocity, maxSpeed);
         this.characterController.Move(velocity * Time.deltaTime);
+        transform.rotation = Quaternion.LookRotation(velocity);
 
         acceleration = Vector3.zero;
     }

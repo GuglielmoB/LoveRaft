@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
     private float sprintDelayLeft;
     private float sprintLeft;
 
-    [Range(0f, 1f)]
+    [HideInInspector]
     public float Exhaustion;
 
     [Header("Camera control")]

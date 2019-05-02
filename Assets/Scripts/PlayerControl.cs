@@ -5,6 +5,9 @@ using UnityEngine.XR;
 
 public class PlayerControl : MonoBehaviour
 {
+    //player health
+    public int health;
+
     [Header("Movement control")]
     public float MoveSpeed;
     public float SprintMultiplier;
@@ -36,6 +39,8 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         negLookLimit = 360 - VerticalLookLimit;
         sprintLeft = MaxSprint;
+        //set default health
+        health = 3;
     }
 
     void Update()

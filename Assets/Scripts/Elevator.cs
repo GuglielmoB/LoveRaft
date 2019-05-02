@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour {
 
-    //need to update for this game
     float xOffset = .1f;
     Vector3 tempPos;
     Vector3 endPos;

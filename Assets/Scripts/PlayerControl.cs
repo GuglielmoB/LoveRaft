@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     //player health
     public int health;
+    public bool key;
 
     [Header("Movement control")]
     public float MoveSpeed;
@@ -41,6 +42,8 @@ public class PlayerControl : MonoBehaviour
         sprintLeft = MaxSprint;
         //set default health
         health = 3;
+        //set active bool for movement
+        key = false;
     }
 
     void Update()

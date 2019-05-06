@@ -10,13 +10,17 @@ public class Elevator : MonoBehaviour {
     bool active = false;
     public float speed = 1;
     public BoxCollider trigger;
+    public GameObject player;
+    static Vector3 tempPlayerPos;
+    Rigidbody playerRb;
 
     // Use this for initialization
     void Start () {
 
         tempPos = this.transform.position;
         endPos = tempPos;
-        endPos.y += 3;
+        endPos.y += 3.3f;
+        playerRb = player.GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
@@ -26,7 +30,9 @@ public class Elevator : MonoBehaviour {
             Vector3 temp = transform.position;
             temp.y += speed * Time.deltaTime;
             transform.position = temp;
+            
         }
+        
 	}
 
     private void OnTriggerEnter(Collider other)

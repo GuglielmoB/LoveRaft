@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Victory : MonoBehaviour
         //player has sucessfully collected the key
         if(other.tag == "Player" && player.GetComponent<PlayerControl>().key)
         {
-            //TODO: Load Victory screen here
+            SceneManager.LoadScene("WinScreen");
         }
     }
 }
